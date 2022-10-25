@@ -4,7 +4,7 @@ class homeSaucePage {
     usernameInput: () => cy.get('.dropdown-menu > form > :nth-child(2) > .form-control'),
     passwordInput: () => cy.get(':nth-child(3) > .form-control'),
     loginBtn: () => cy.get(':nth-child(5) > .btn'),
-    errorMessage: () => cy.get('h3[data-test="error"]'),
+    errorMessage: () => cy.get('.col-sm-12 > .alert'),
   };
 
   pressLoginBtn() {
