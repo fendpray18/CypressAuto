@@ -20,7 +20,6 @@ const createEsbuildPlugin =
 module.exports = defineConfig({
   e2e: {
     async setupNodeEvents(on, config) {
-      // implement node event listeners here
       const bundler = createBundler({
         plugins: [createEsbuildPlugin(config)],
       });

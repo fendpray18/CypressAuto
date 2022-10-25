@@ -9,6 +9,9 @@ const loginPage = require("../../pages/LoginPage");
 Given("A user opens a travellin website", () => {
   cy.visit("/");
 });
+Then("A user hold login button", () => {
+  loginPage.pressLoginBtn();
+});
 When("A user enters the username {string}", (username) => {
   loginPage.typeUsername(username);
 });
@@ -26,8 +29,8 @@ And("A user enters the password {string}", (password) => {
 And("A user clicks on the login button", () => {
   loginPage.clickLogin();
 });
-Then("the url will contains the inventory subdirectory", () => {
-  cy.url().should("contains", "/inventory.html");
+Then("the url will contains the profile subdirectory", () => {
+  cy.url().should("contains", "/Auth/Login");
 });
 Then("The error message {string} is displayed", (errorMessage) => {
   loginPage.elements.errorMessage().should("have.text", errorMessage);
